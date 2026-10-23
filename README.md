@@ -1,6 +1,6 @@
 # willow-tutorials
 
-Code for tutorials built from Willow, the chat assistant in the Willow Bend Family Clinic demo. The clinic is fictional and all data is made up. Nobody has used this in production.
+These tutorials come from real work: Willow, a chat assistant I built for a clinic's website. The code is rewritten for teaching, and all names and contact details are placeholders.
 
 ## Tutorials
 
@@ -20,4 +20,4 @@ npm test
 
 ## The full app
 
-The complete demo (React, Vite, a Netlify Function) lives in [willow-bend](https://github.com/MenokoOG/willow-bend).
+The complete app (React, Vite, a Netlify Function) lives in [willow-bend](https://github.com/MenokoOG/willow-bend).
