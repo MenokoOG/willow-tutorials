@@ -1,0 +1,13 @@
+{
+  "name": "willow-tutorial-1-offline-chatbot",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vitest": "^5.0.1"
+  }
+}
