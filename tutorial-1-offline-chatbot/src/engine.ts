@@ -58,6 +58,13 @@ export function classifyTurn(text: string): BotTurn {
 }
 
 export function respond(text: string, ctx: BotContext): BotAnswer {
+  const turn = classifyTurn(text);
+
+  // Emergency always wins, even in the middle of a flow.
+  if (turn.intent === "emergency" && turn.confidence >= 0.8) {
+    return answerCard(KB.clinicInfo.emergencyText, baseQuickReplies());
+  }
+
   // Flow state: the previous turn asked a question, so any reply gets the walkthrough.
   if (ctx.state === "awaiting_status_detail") {
     return answerCard(
@@ -68,13 +75,6 @@ export function respond(text: string, ctx: BotContext): BotAnswer {
       ].join("\n"),
       baseQuickReplies()
     );
-  }
-
-  const turn = classifyTurn(text);
-
-  // Emergency always wins if detected strongly.
-  if (turn.intent === "emergency" && turn.confidence >= 0.8) {
-    return answerCard(KB.clinicInfo.emergencyText, baseQuickReplies());
   }
 
   switch (turn.intent) {

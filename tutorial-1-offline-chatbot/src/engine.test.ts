@@ -52,6 +52,11 @@ describe("respond", () => {
     expect(second.nextState).toBeUndefined();
   });
 
+  it("answers an emergency typed in the middle of a flow", () => {
+    const ans = respond("I have chest pain", { ...ctx, state: "awaiting_status_detail" });
+    expect(ans.text).toContain("911");
+  });
+
   it("always offers quick replies, even for gibberish", () => {
     const ans = respond("asdfgh", ctx);
     expect(ans.quickReplies?.length).toBeGreaterThan(0);
