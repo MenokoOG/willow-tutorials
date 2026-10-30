@@ -1,0 +1,8 @@
+{
+  "name": "willow-tutorials",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/run-all.mjs"
+  }
+}
